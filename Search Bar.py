@@ -83,9 +83,7 @@ def main():
         
     
     
-if __name__ == "__main__": #comaparing two functions
-    main()
- 
+
 
 
 
