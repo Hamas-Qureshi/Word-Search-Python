@@ -41,45 +41,10 @@ def read_file(fp):
                     dic[f[l][w]]={l+1}
     return dic
 
-def find_coexistance(D, query): 
-    '''(dict,str)->list
-    See the assignment text for what this function should do'''
-
-    s=query.split()
-        
-    for i in range(len(s)):
-        s[i]=s[i].replace('-','')
-        s[i]=s[i].replace("'",'')
-        for ch in string.punctuation:
-            s[i]=s[i].strip(ch)
-        
-    y=D[s[i]]
-    for i in range(len(s)-1):
-        y = y.intersection(D[s[i+1]])
-    y = list(y)
-    y.sort()
-    return y
-    
 
 
            
-def main():
-    file=open_file()
-    d=read_file(file)
-            # Until input is Q, it will continue to ask for inputs
-    while True:
-        query=input("Enter one or more words separated by spaces, or 'q' to quit: ").strip().lower()
-        if query=='q' or query=='Q':
-            break
-        try:
-            a = find_coexistance(d, query)
-        except Exception:
-            print("word '"+query+"' not in file.")
-        else:
-            print('The one or more words you entered coexisted in the following lines of the file:')
-            for n in a:
-                print(n,end=' ')
-            print()
+
         
     
     
